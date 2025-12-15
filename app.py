@@ -4,9 +4,11 @@ import plotly.express as px
 from dash import Dash, html, dcc
 import dash_bootstrap_components as dbc
 
+url = "https://raw.githubusercontent.com/rahmanjiagupmun-nnar/dashboard-analyse-vente-kpi/main/data_kpi.xlsx"
+
 # Chargement des données
 try:
-    df = pd.read_excel("data_kpi.xlsx")
+    df = pd.read_excel(url)
 
     # Afficher les colonnes pour debug
     print("Colonnes détectées dans le fichier Excel :")
@@ -263,4 +265,4 @@ app.layout = dbc.Container([
 ], fluid=True, style={"backgroundColor": "#f0f2f5"})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8050)
+    app.run(host="0.0.0.0", port=10000)
